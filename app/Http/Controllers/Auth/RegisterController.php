@@ -54,7 +54,8 @@ class RegisterController extends Controller
             'cognome'=> ['required', 'string', 'max:200'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'indirizzo' => ['required', 'string', 'min:5']
+            'indirizzo' => ['required', 'string', 'min:5'],
+            'specializzazione' => ['required', 'string', 'min:5']
             ]);
     }
 
@@ -73,6 +74,7 @@ class RegisterController extends Controller
             'cognome' => $data['cognome'],
             'email' => $data['email'],
             'indirizzo' => $data['indirizzo'],
+            'specializzazione' => $data['specializzazione'],
             'password' => Hash::make($data['password']),
         ]);
     }
