@@ -26,6 +26,6 @@ class HomeController extends Controller
 
         $profilo = User::all();
         //dd($profilo);
-     return view('medico.home', compact('profilo'));
+     return view('Medico.home', compact('profilo'));
     }
 }
