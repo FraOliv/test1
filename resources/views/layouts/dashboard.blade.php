@@ -78,7 +78,7 @@
         <div >
             <ul class="list-unstyled d-flex" style="padding: 30px 0;background-color:black;">
                <li style="padding: 0 10px;"><a href="#" style="color: rgb(236, 25, 35);"><i class="fas fa-tachometer-alt fa-lg fa-fw"></i>Dashboard</a></li>
-               <li style="padding: 0 10px;"><a href="#" style="color: rgb(236, 25, 35);"><i class="fas fa-book-open fa-lg fa-fw"></i>Mio Profilo</a></li>
+               <li style="padding: 0 10px;"><a href="{{route('medico.profilo.show', Auth::user()->id)}}" style="color: rgb(236, 25, 35);"><i class="fas fa-book-open fa-lg fa-fw"></i>Mio Profilo</a></li>
                <li style="padding: 0 10px;"><a href="#" style="color: rgb(236, 25, 35);"><i class="fas fa-book-open fa-lg fa-fw"></i>Messaggi Ricevuti</a></li>
                <li style="padding: 0 10px;"><a href="#" style="color: rgb(236, 25, 35);"><i class="fas fa-folder-open fa-lg fa-fw"></i>Statistiche</a></li>
                <li style="padding: 0 10px;"><a href="#" style="color: rgb(236, 25, 35);"><i class="fas fa-print fa-lg fa-fw"></i>Sponsorizzazioni</a></li>
@@ -89,6 +89,7 @@
         <main class="py-4">
             @yield('content')
         </main>
+
         
     </div>
 </body>

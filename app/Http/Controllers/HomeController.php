@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -22,7 +22,10 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        return view('home');
+    {   
+
+        $profilo = User::all();
+        //dd($profilo);
+     return view('medico.home', compact('profilo'));
     }
 }

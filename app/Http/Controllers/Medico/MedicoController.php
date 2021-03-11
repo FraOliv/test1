@@ -15,7 +15,9 @@ class MedicoController extends Controller
     public function index()
     {
         $medici = User::all();
-        dd($medici);
+        //dd($medici);
+        return view('medico.index', compact('medici'));
+        
     }
 
     /**
@@ -45,9 +47,10 @@ class MedicoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, User $user)
     {
-        //
+        return view('medico.show',compact('user'));
+
     }
 
     /**
