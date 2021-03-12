@@ -19,5 +19,10 @@
             </div>
         </div>
     </div>
+    <div class="dashboard-id">
+        <h1>Questa è la dashboard del Dott.      
+            {{$profilo->nome}}</h1>
+            <a href="{{route('medico.profilo.index')}}"> Profilo</a>
+        </div>
 </div>
 @endsection

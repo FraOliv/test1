@@ -1,7 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Medico;
+
+use App\Http\Controllers\Controller;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,8 +27,10 @@ class HomeController extends Controller
     public function index()
     {   
 
-        $profilo = User::all();
+        $profili = User::all();
+        $profilo = Auth::user();
+
         //dd($profilo);
-     return view('Medico.home', compact('profilo'));
+    return view('Medico.home', compact('profilo'));
     }
 }

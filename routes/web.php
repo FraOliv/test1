@@ -20,9 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 
-
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::middleware('auth')->namespace('Medico')->prefix('medico')->name('medico.')->group(function(){
-    Route::resource('profilo', 'MedicoController');
+
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('profilo', 'ProfiloController');
 });
