@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Medico;
 use App\User;
+
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class MedicoController extends Controller
+class ProfiloController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +17,8 @@ class MedicoController extends Controller
     public function index()
     {
         $medici = User::all();
-        //dd($medici);
-        return view('medico.index', compact('medici'));
+        $medico = Auth::user();
+        return view('medico.profilo', compact('medici','medico'));
         
     }
 
