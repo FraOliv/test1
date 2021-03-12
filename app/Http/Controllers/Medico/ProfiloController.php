@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Medico;
 use App\User;
+use App\Profile;
 
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
@@ -18,7 +19,8 @@ class ProfiloController extends Controller
     {
         $medici = User::all();
         $medico = Auth::user();
-        return view('medico.profilo', compact('medici','medico'));
+        $profilo = Profile::find($medico);
+        return view('Medico.profilo', compact('medici','medico', 'profilo'));
         
     }
 
