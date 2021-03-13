@@ -45,6 +45,7 @@ class ProfiloController extends Controller
     {
         //dd($request);
         $dati_validati = $request->validate([
+            'user_id' => 'user_id',
             'genere' => 'required',
             'bio' => 'nullable',
             'foto' => 'nullable',
@@ -57,7 +58,8 @@ class ProfiloController extends Controller
         $medico =Auth::user()->id;
         $dati_validati['user_id'] = $medico;
         Profile::create($dati_validati);
-        return redirect('medico/profilo')/* ->with('success', 'Profile saved!') */;
+        dd($dati_validati);
+        return redirect('medico/profilo')->with('success', 'Profile saved!');
     }
 
     /**
