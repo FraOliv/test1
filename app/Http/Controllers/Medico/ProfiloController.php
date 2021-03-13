@@ -58,7 +58,7 @@ class ProfiloController extends Controller
         $medico =Auth::user()->id;
         $dati_validati['user_id'] = $medico;
         Profile::create($dati_validati);
-        dd($dati_validati);
+     
         return redirect('medico/profilo')->with('success', 'Profile saved!');
     }
 

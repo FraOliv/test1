@@ -12,6 +12,19 @@ class User extends Authenticatable
     {
         return $this->hasOne(Profile::class);
     }
+    public function prestaziones()
+    {
+        return $this->hasMany('App\Prestazione');    
+    }
+    public function ratings()
+    {
+        return $this->hasMany('App\Rating');
+    }
+    public function messages()
+    {
+        return $this->hasMany('App\Message');
+    }
+    
     use Notifiable;
 
     /**
@@ -20,7 +33,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nome','cognome', 'email', 'password','indirizzo','specializzazione'
+        'nome', 'cognome', 'email', 'password', 'indirizzo', 'specializzazione'
     ];
 
     /**
