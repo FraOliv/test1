@@ -17,13 +17,13 @@ class CreateProfilesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->boolean('genere');//cambiare in string
+            $table->string('genere');//ok
             $table->text('cv')->nullable();
             $table->text('bio')->nullable();
             $table->text('foto');
             $table->string('cellulare');
             $table->string('città');
-            $table->integer('piva');//da cambiare in string
+            $table->string('piva');//ok
             $table->boolean('disabilità');
             $table->timestamps();
         });

@@ -10,10 +10,10 @@
 <div class="form-group">
     
     <label for="genere">Genere</label><br>
-    <input type="radio" id="male" name="genere" value="1">
-    <label for="male">Male</label><br>
-    <input type="radio" id="female" name="genere" value="0">
-    <label for="female">Female</label><br>
+    <input type="radio" id="M" name="genere" value="maschio">
+    <label for="male">Maschio</label><br>
+    <input type="radio" id="F" name="genere" value="femmina">
+    <label for="female">Femmina</label><br>
 </div>
 
 <div class="form-group">
@@ -41,8 +41,8 @@
     <small class="text-muted">Inserisci la tua città</small>
   </div>
    <div class="form-group">
-    <label for="città">città</label>
-    <input type="number" name="piva" id="piva" >
+    <label for="città">P.IVA</label>
+    <input type="text" name="piva" id="piva" >
     <small class="text-muted">Inserisci la tua PIVA</small>
   </div>
 <div class="form-group">
