@@ -7,6 +7,7 @@ use App\Profile;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class ProfiloController extends Controller
 {
@@ -19,8 +20,7 @@ class ProfiloController extends Controller
     {
         $medici = User::all();
         $medico = Auth::user();
-        $profilo = Profile::find($medico);
-        return view('Medico.profilo', compact('medici','medico', 'profilo'));
+        return view('Medico.profilo', compact('medici','medico'));
         
     }
 
@@ -31,7 +31,8 @@ class ProfiloController extends Controller
      */
     public function create()
     {
-        //
+        $medico = Auth::user();
+        return view('Medico.create', compact($medico));
     }
 
     /**
@@ -42,7 +43,26 @@ class ProfiloController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request);
+        $dati_validati = $request->validate([
+            'user_id' => Auth::user()->id,
+            'genere' => 'required',
+            'bio' => 'nullable',
+            'foto' => 'nullable',
+            'cellulare' => 'required',
+            'città' => 'required',
+            'piva' => 'required',
+            'disabilità' => 'required',
+        ]);
+        
+        Profile::create($dati_validati);
+        
+        
+
+
+
+
+
     }
 
     /**
