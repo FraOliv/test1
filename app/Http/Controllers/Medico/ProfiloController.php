@@ -45,7 +45,7 @@ class ProfiloController extends Controller
     {
         //dd($request);
         $dati_validati = $request->validate([
-            'user_id' => Auth::user()->id,
+            'user_id' => 'user_id',
             'genere' => 'required',
             'bio' => 'nullable',
             'foto' => 'nullable',
