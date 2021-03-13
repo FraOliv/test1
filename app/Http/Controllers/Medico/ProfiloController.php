@@ -54,15 +54,11 @@ class ProfiloController extends Controller
             'piva' => 'required',
             'disabilità' => 'required',
         ]);
-        
+
+        $medico =Auth::user()->id;
+        $dati_validati['user_id'] = $medico;
         Profile::create($dati_validati);
-        
-        
-
-
-
-
-
+        return redirect('medico/profilo')/* ->with('success', 'Profile saved!') */;
     }
 
     /**

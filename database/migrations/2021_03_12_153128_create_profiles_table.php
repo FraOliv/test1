@@ -16,7 +16,7 @@ class CreateProfilesTable extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->boolean('genere');//cambiare in string
             $table->text('cv')->nullable();
             $table->text('bio')->nullable();
@@ -26,7 +26,6 @@ class CreateProfilesTable extends Migration
             $table->integer('piva');//da cambiare in string
             $table->boolean('disabilità');
             $table->timestamps();
-
         });
     }
 
