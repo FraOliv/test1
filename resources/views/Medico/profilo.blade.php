@@ -1,6 +1,15 @@
 @extends('layouts.dashboard')
 
 @section('content')
+@if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+      </div><br />
+    @endif
 
 <h1>Questo è il profilo del Dott. {{$medico->cognome}} {{$medico->nome}}</h1>
 <div class="container rounded bg-white mt-5 mb-5">
@@ -18,7 +27,7 @@
         </div>
         <div class="row mt-2">
           <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name" value=""></div>
-            <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="" placeholder="surname">{{$medico->cognome}}</div>
+            <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="" placeholder="surname"></div>
           </div>
           <div class="row mt-3">
             <div class="col-md-12"><label class="labels">PhoneNumber</label><input type="text" class="form-control" placeholder="enter phone number" value="">{{optional($medico->profile)->cellulare}}</div>
