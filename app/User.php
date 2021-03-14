@@ -24,7 +24,14 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Message');
     }
-    
+    public function Specializzaziones()
+    {
+        return $this->belongsToMany('App\Specializzazione');
+    }
+    public function Sponsors()
+    {
+        return $this->belongsToMany('App\Sponsor');
+    }
     use Notifiable;
 
     /**
