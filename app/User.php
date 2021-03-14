@@ -24,6 +24,10 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Message');
     }
+    public function Specializzaziones()
+    {
+        return $this->belongsToMany('App\Specializzazione');
+    }
     
     use Notifiable;
 
