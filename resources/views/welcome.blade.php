@@ -86,7 +86,7 @@
                 <div class="title m-b-md">
                     WhichDoc? <i class="fas fa-user-md"></i>
                 </div>
-                <h1>Trova l'escort che fa al caso tuo.</h1>
+                <h1>Trova lo specialista che fa al caso tuo.</h1>
             </div>
         </div>
     </body>
