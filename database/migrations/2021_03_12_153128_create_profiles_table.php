@@ -18,9 +18,9 @@ class CreateProfilesTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('genere');//ok
-            $table->text('cv')->nullable();
+            $table->binary('cv')->nullable();
             $table->text('bio')->nullable();
-            $table->text('foto');
+            $table->binary('foto')->nullable();
             $table->string('cellulare');
             $table->string('città');
             $table->string('piva');//ok

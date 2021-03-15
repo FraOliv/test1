@@ -16,12 +16,14 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <!-- Icon -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <h1>QUESTA E' LA NOSTRA DASHBOARD</h1>
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -49,7 +51,7 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
-                        @else
+                            @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->nome }}
@@ -79,8 +81,7 @@
         <div >
             <ul class="list-unstyled d-flex" style="padding: 30px 0;background-color:black;">
                <li style="padding: 0 10px;"><a href="{{ url('/medico/home') }}" style="color: rgb(236, 25, 35);"><i class="fas fa-tachometer-alt fa-lg fa-fw"></i>Dashboard</a></li>
-               <li style="padding: 0 10px;"><a href="{{route('medico.profilo.index')}}" style="color: rgb(236, 25, 35);"><i class="fas fa-book-open fa-lg fa-fw"></i>Mio Profilo</a></li>
-               <li><a href="{{route('medico.profilo.create')}}">Crea Profilo</a></li>
+               <li style="padding: 0 10px;"><a href="{{route('medico.profilo.index')}}" style="color: rgb(236, 25, 35);"><i class="fas fa-id-card"></i>EditProfile</a></li>
                <li style="padding: 0 10px;"><a href="#" style="color: rgb(236, 25, 35);"><i class="fas fa-book-open fa-lg fa-fw"></i>Messaggi Ricevuti</a></li>
                <li style="padding: 0 10px;"><a href="#" style="color: rgb(236, 25, 35);"><i class="fas fa-folder-open fa-lg fa-fw"></i>Statistiche</a></li>
                <li style="padding: 0 10px;"><a href="#" style="color: rgb(236, 25, 35);"><i class="fas fa-print fa-lg fa-fw"></i>Sponsorizzazioni</a></li>
